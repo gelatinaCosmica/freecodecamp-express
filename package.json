@@ -7,6 +7,9 @@
 		"cookie-parser": "^1.4.3",
 		"fcc-express-bground": "https://github.com/freeCodeCamp/fcc-express-bground-pkg.git"
 	},
+	"engines": {
+    "node": "16.2.0"
+  },
 	"main": "server.js",
 	"scripts": {
 		"start": "node server.js"
