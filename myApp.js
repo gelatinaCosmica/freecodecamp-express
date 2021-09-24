@@ -39,7 +39,8 @@ const newRoute = app.get('/now', (req, res, next) => {
 })
 
 const echoRoute = app.get('/:word/echo', (req, res, next) => {
-  res.send(req.params.word)
+  const wordParam = req.params.word
+  res.json(wordParam)
 })
 
 
