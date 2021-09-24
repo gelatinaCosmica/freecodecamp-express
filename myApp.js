@@ -15,7 +15,9 @@ const serveString = app.get('/', (req, res) => {
 app.use(express.static(absolutePath))
 app.use('/public', express.static(absolutePath))
 
-
+app.get('/json', (req, res) => {
+  res.json({ "message": "Hello json" })
+})
 
 
 
