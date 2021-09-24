@@ -43,7 +43,10 @@ const echoRoute = app.get('/:word/echo', (req, res, next) => {
   res.json(wordParam)
 })
 
-
+const nameRoute = app.get('/name/:first/:last', (req, res, next) => {
+  const jsonString = { name: req.params.first + ' ' + req.params.last }
+  res.json(jsonString)
+})
 
 
 
