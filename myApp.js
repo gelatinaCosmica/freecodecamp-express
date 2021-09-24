@@ -15,8 +15,15 @@ const serveString = app.get('/', (req, res) => {
 app.use(express.static(absolutePath))
 app.use('/public', express.static(absolutePath))
 
-app.get('/json', (req, res) => {
-  console.log(process.env.MESSAGE_STYLE, '<= message style')
+
+app.use(function (req, res, next) {
+  const string = req.method + ' ' + req.path + ' - ' + req.ip
+  console.log(string)
+  next()
+})
+
+app.get('/json', (req, res, next) => {
+
   if (process.env.MESSAGE_STYLE == 'uppercase') {
     res.json(
       { "message": "HELLO JSON" }
@@ -27,6 +34,7 @@ app.get('/json', (req, res) => {
     )
   }
 })
+
 
 
 
