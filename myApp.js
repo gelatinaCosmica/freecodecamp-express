@@ -38,6 +38,9 @@ const newRoute = app.get('/now', (req, res, next) => {
   res.send({ time: req.time })
 })
 
+const echoRoute = app.get('/:word/echo', (req, res, next) => {
+  res.send(req.params.word)
+})
 
 
 
