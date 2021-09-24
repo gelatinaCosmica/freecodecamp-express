@@ -53,7 +53,8 @@ const nameRoute = app.route('/name').get((req, res, next) => {
 
   res.json(jsonString)
 }).post((req, res, next) => {
-  res.json(req.body)
+  const reqBody = { name: req.body.first + ' ' + req.body.last }
+  res.json(reqBody)
 })
 
 
